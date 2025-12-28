@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Tambahan Kajian</title>
+  <meta name="robots" content="noindex,nofollow">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: #fff;
+      padding: 30px;
+      max-width: 420px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    }
+    h1 { font-size: 20px; margin-bottom: 12px; }
+    p { font-size: 14px; color: #555; }
+    a.btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #2d89ef;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    a.btn:hover { opacity: .9; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Materi Tambahan Kajian</h1>
+    <p>
+      Halaman ini berisi rujukan dan materi lanjutan
+      untuk memperdalam pembahasan kajian.
+    </p>
+
+    <a class="btn" href="#" id="ctaBtn">
+  Lanjutkan
+</a>
+  </div>
+</body>
+
+<script>
+  const adLink = "PASTE_ADSTERRA_LINK";
+  const realLink = "/doa/"; // atau link asli kamu
+
+  const btn = document.getElementById("ctaBtn");
+  let clickCount = localStorage.getItem("cta_click") || 0;
+
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    clickCount++;
+    localStorage.setItem("cta_click", clickCount);
+
+    if (clickCount === 1) {
+      window.open(adLink, "_blank");
+    } else {
+      window.location.href = realLink;
+    }
+  });
+</script>
+</html>
