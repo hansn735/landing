@@ -47,28 +47,30 @@
     </p>
 
     <a class="btn" href="#" id="ctaBtn">
-  Lanjutkan
+  Klik untuk membuka materi tambahan
 </a>
   </div>
 </body>
 
 <script>
-  const adLink = "PASTE_ADSTERRA_LINK";
-  const realLink = "/doa/"; // atau link asli kamu
+  const adLink = "https://www.effectivegatecpm.com/khbd5q4iv?key=e4b3ce4ebe1b75d7d98eb999e576fbd2";
+  const realLink = "uas.html";
 
   const btn = document.getElementById("ctaBtn");
-  let clickCount = localStorage.getItem("cta_click") || 0;
+  let clickCount = parseInt(sessionStorage.getItem("cta_click") || "0");
 
   btn.addEventListener("click", function (e) {
     e.preventDefault();
     clickCount++;
-    localStorage.setItem("cta_click", clickCount);
+    sessionStorage.setItem("cta_click", clickCount);
 
     if (clickCount === 1) {
-      window.open(adLink, "_blank");
+      window.open(adLink, "_blank", "noopener,noreferrer");
     } else {
       window.location.href = realLink;
     }
   });
 </script>
+
+
 </html>
